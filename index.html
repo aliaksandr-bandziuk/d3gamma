@@ -1,0 +1,595 @@
+
+<!doctype html>
+<html lang="ru-RU">
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+		
+		<meta name="yandex-verification" content="d49e1c9c47bafa97" />
+		<meta name="google-site-verification" content="D57iZu0U22Zi0wrO9IshnBlAOpaYAaVKpjtIRTvu9SI" />
+		
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	    
+		<title>Д3-Гамма в таблетках | Купить витамин Д в Минске</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&#038;display=swap" /></noscript>
+    
+    <link rel="stylesheet" href="styles/ec546e8999eebd65f8b137bb05c7c59c.css" media="all" data-minify="1" />
+		<meta name="description" content="Д3-Гамма® — ежедневный дополнительный источник витамина D3 🌞 без консервантов ● без глютена ● без красителей ● без лактозы " >
+	
+		
+		<link rel="shortcut icon" href="assets/favicon.ico">
+
+		
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		
+
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.13 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Д3-Гамма® — ежедневный дополнительный источник витамина D3 🌞 без консервантов ✅ без глютена ✅ без красителей ✅ без лактозы ✅Немецкое качество" />
+
+
+
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/d3gamma.com.by\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='scripts/jquery.min.js' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='scripts/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='scripts/scripts.js' id='scripts-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='scripts/video.js' id='video-js'></script>
+
+
+<style>@media screen and (max-width: 600px) { #wpadminbar {position: fixed;} }</style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>		
+		
+	</head>
+	
+	<body class="home page-template-default page page-id-2 homepage">
+		
+		
+		<header class="header">
+			<div class="header__menubar menubar container">
+				<div class="menubar__menu container__content">
+					<a class="menubar__menuitem scrl" href="#home">Главная</a>
+					<a class="menubar__menuitem scrl" href="#d3gamma">Д<sub>3</sub>-Гамма<sup>®</sup></a>
+					<a class="menubar__menuitem scrl" href="#instruction">Инструкция</a>
+					<a class="menubar__menuitem scrl" href="#vitamin-d3">Витамин D3</a>
+					<!--<a class="menubar__menuitem" href="/faq/">Вопросы и ответы</a>-->
+					<a class="menubar__menuitem" href="https://tabletka.by/search?request=%D0%B43%20%D0%B3%D0%B0%D0%BC%D0%BC%D0%B0" target="_blank">Найти в аптеке</a>
+				</div>
+				
+				<div class="menubar__close">
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src=""><img src="assets/menu-close.png" alt>
+				</div>
+			</div>
+			
+			<div class="header__mask"></div>
+			
+			<div class="header__topbar topbar container">
+				<div class="topbar__content container__content">
+					<div class="header__menuicon menuicon">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/menu-open.png"><img src="assets/menu-open.png" alt>
+					</div>
+					
+					<a class="topbar__logo" href="#">
+						<img src="assets/logo.png" alt>
+					</a>
+
+					<img class="topbar__ww" src="assets/woerwag_pharma_logo_screen_rgb.png" alt>
+				</div>
+			</div>
+		</header>
+<main class="page page-home">
+	<div class="topbanner container" id="home">
+		<div class="topbanner__content container__content">
+			<h1 class="subtitle__name">Д<sub>3</sub>-Гамма<sup>®</sup></h1>
+			<p class="topbanner__title">Твое солнце круглый год</p>
+			<div class="topbanner__iconlist">
+				<div class="topbanner__iconitem">
+					<img width="31" height="31" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2031%2031'%3E%3C/svg%3E" alt data-lazy-src="assets/topbanner-icon1.svg">
+					<p>без консервантов</p>
+				</div>
+				<div class="topbanner__iconitem">
+					<img width="31" height="31" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2031%2031'%3E%3C/svg%3E" alt data-lazy-src="assets/topbanner-icon2.svg">
+					<p>без красителей</p>
+				</div>
+				<div class="topbanner__iconitem">
+					<img width="31" height="31" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2031%2031'%3E%3C/svg%3E" alt data-lazy-src="assets/topbanner-icon3.svg">
+					<p>без глютена</p>
+				</div>
+				<div class="topbanner__iconitem">
+					<img width="31" height="31" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2031%2031'%3E%3C/svg%3E" alt data-lazy-src="assets/topbanner-icon4.svg">
+					<p>без лактозы</p>
+				</div>
+			</div>
+			
+			<p class="topbanner__vittitle">Витамин D3 — это:</p>
+			<div class="topbanner__vitlist">
+				<div class="topbanner__vititem">
+					<img width="17" height="16" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2016'%3E%3C/svg%3E" alt data-lazy-src="assets/topbanner-icon.svg">
+					<p>Энергетический потенциал организма</p>
+				</div>
+				<div class="topbanner__vititem">
+					<img width="17" height="16" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2016'%3E%3C/svg%3E" alt data-lazy-src="assets/topbanner-icon.svg">
+					<p>Активность иммунной системы</p>
+				</div>
+				<div class="topbanner__vititem">
+					<img width="17" height="16" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2016'%3E%3C/svg%3E" alt data-lazy-src="assets/topbanner-icon.svg">
+					<p>Усвоение кальция и прочность костей</p>
+				</div>
+				<div class="topbanner__vititem">
+					<img width="17" height="16" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2016'%3E%3C/svg%3E" alt data-lazy-src="assets/topbanner-icon.svg">
+					<p>Благоприятный эмоциональный фон</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="toppack container">
+		<div class="toppack__content container__content">
+			<div class="toppack__img">
+				<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/pack.png">
+			</div>
+			
+			<div class="toppack__info">
+				<div class="toppack__msg">
+					<img width="17" height="36" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2036'%3E%3C/svg%3E" alt data-lazy-src="assets/msg-l.svg">
+					<p>1 таблетка содержит</p>
+					<p>1000 МЕ витамина D3</p>
+					<p><span>в форме холекальциферола</span></p>
+				</div>
+				<img class="toppack__18" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/18.png">
+			</div>
+		</div>
+	</div>
+	
+	<div class="d3g container" id="d3gamma">
+		<div class="d3g__content container__content">
+			<div class="subtitle">
+				<h2 class="subtitle__name">Преимущества Д<sub>3</sub>-Гамма<sup>®</sup></h2>
+			</div>
+			
+			<div class="container__row">
+				<div class="d3g__infocol container__col container__col_6">
+					<div class="d3g__card1">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-icon1.png">
+						<p class="indexes-lg"><span>Д<sub>3</sub>-Гамма<sup>®</sup></span> — ежедневный дополнительный источник витамина D3</p>
+					</div>
+
+					<div class="d3g__card2">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-icon2.png">
+						<p>Всего половина таблетки Д<sub>3</sub>-Гамма<sup>®</sup> в день помогает обеспечить <strong>достаточное поступление витамина D3 в организм</strong></p>
+					</div>
+
+					<div class="d3g__sidecard sidecard">
+						<p class="sidecard__title">Немецкое качество</p>
+						<p class="sidecard__txt">Д<sub>3</sub>-Гамма<sup>®</sup> разработана и производится «Mauermann - Arzneimittel KG» для «Wörwag Pharma GmbH & Co. KG»</p>
+					</div>
+				</div>
+					
+				<div class="d3g__imgcol container__col container__col_6">
+					<img class="d3g__img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/pack-blister.png">
+
+					<div class="d3g__msg">
+						<img width="37" height="18" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2037%2018'%3E%3C/svg%3E" alt data-lazy-src="assets/msg-t.svg">
+						<p>Каждая таблетка Д<sub>3</sub>-Гамма<sup>®</sup> содержит</p>
+						<p><strong>50 таблеток по 1000 ME витамина D3</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="advarea">
+		<div class="container">
+			<div class="advarea__content container__content">
+				<div class="subtitle">
+					<h2 class="subtitle__name">
+						<span>Преимущества</span> <i>Д<sub>3</sub>-Гамма<sup>®</sup></i>
+					</h2>
+				</div>
+
+				<div class="advarea__items">
+					<div class="advarea__advitem advitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-adv1.png">
+						<p>Маленькая таблетка с точной дозировкой</p>
+					</div>
+					<div class="advarea__advitem advitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-adv2.png">
+						<p>Не нужно считать капли</p>
+					</div>
+					<div class="advarea__advitem advitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-adv3.png">
+						<p>Витамин D, сделанный в Германии</p>
+					</div>
+					<div class="advarea__advitem advitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-adv4.png">
+						<p>Без консервантов</p>
+					</div>
+					<div class="advarea__advitem advitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-adv5.png">
+						<p>Без красителей</p>
+					</div>
+					<div class="advarea__advitem advitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-adv6.png">
+						<p>Без глютена</p>
+					</div>
+					<div class="advarea__advitem advitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-adv7.png">
+						<p>Без лактозы</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="bannerline container">
+		<p class="bannerline__content container__content indexes-lg">Д<sub>3</sub>-Гамма<sup>®</sup> — твое солнце круглый год</p>
+	</div>
+	
+	<div class="instr container" id="instruction">
+		<div class="instr__content container__content">
+			<div class="subtitle">
+				<h3 class="subtitle__name"><span>Инструкция</span></h3>
+			</div>
+			
+			<div class="container__row">
+				<div class="instr__infocol container__col container__col_6">
+					<div class="instr__card instrcard">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-icon3.png">
+						<p class="instrcard__txt1"><span>Д<sub>3</sub>-Гамма<sup>®</sup></span> принимают <strong>по ½ таблетки в день, во время еды, не разжевывая, запивая водой</strong></p>
+						<p class="instrcard__txt2">Рекомендованная продолжительность приема: <strong>1 месяц</strong></p>
+					</div>
+
+					<div class="instr__msg">
+						<img width="24" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2050'%3E%3C/svg%3E" alt data-lazy-src="assets/msg-r-gr.svg">
+						<p>Одна таблетка Д<sub>3</sub>-Гамма<sup>®</sup> 1000 МЕ содержит <strong>25 мкг витамина D3</strong></p>
+					</div>
+
+					<div class="instr__download download">
+						<p class="download__title">Скачать</p>
+						<a class="download__btn" target="_blank" href="assets/d3-gamma-manual.pdf">
+							<p class="download__name">Инструкция</p>
+							<p class="download__descr">PDF, 0.5 Мб</p>
+							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/download.png">
+						</a>
+					</div>
+				</div>
+					
+				<div class="instr__imgcol container__col container__col_6">
+					<img class="instr__img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/pack-pills.jpg">
+
+					<div class="instr__sidecard sidecard">
+						<p class="sidecard__txt">По назначению врача  пациент может использовать  необходимую дозировку <span>холекальциферола</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="vitamin container" id="vitamin-d3">
+		<div class="vitamin__content container__content">
+			<div class="subtitle">
+				<h2 class="subtitle__name"><span>Витамин</span> D3</h2>
+			</div>
+			
+			<div class="container__row">
+				<div class="vitamin__infocol container__col container__col_6">
+					<div class="vitamin__card1">
+						<p><strong>Витамин D</strong> в организме является основным компонентом множества различных процессов</p>
+						<p><strong>Поэтому он очень важен для человека</strong></p>
+					</div>
+					
+					<div class="vitamin__card2 vitcard2">
+						<img width="116" height="116" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20116%20116'%3E%3C/svg%3E" alt data-lazy-src="assets/home-icon4.svg">
+						<p class="vitcard2__txt1">Симптомы недостатка витамина D3</p>
+						<p class="vitcard2__txt2">Мышечная слабость
+							<br/>Неприятные ощущения в костях и мышцах
+							<br/>Трудности при ходьбе
+							<br/>Частые простуды
+							<br/>Постоянная усталость</p>
+					</div>
+				</div>
+					
+				<div class="vitamin__imgcol container__col container__col_6">
+					<img class="vitamin__img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/d-shining.jpg">
+
+					<div class="vitamin__msg vitmsg">
+						<img width="37" height="18" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2037%2018'%3E%3C/svg%3E" alt data-lazy-src="assets/msg-t.svg">
+						<p class="vitmsg__txt1">Сколько витамина D нам нужно?</p>
+						<p class="vitmsg__txt2">Суточная норма витамина D у взрослых составляет <strong>1500-2000 МЕ в день</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="bannerline bannerline_sm container">
+		<h4 class="bannerline__content container__content">Откуда поступает витамин D?</h4>
+	</div>
+	
+	<div class="sources container">
+		<div class="container__content">
+			<p class="sources__title">Существует два естественных источника витамина D:</p>
+			<div class="sources__items">
+				<div class="sources__item source">
+					<div class="source__img">
+						<img width="120" height="120" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20120'%3E%3C/svg%3E" alt data-lazy-src="assets/source-1.svg">
+					</div>
+					<div class="source__info">
+						<p class="source__name">Солнце</p>
+						<p class="source__descr">Витамин D в основном вырабатывается в коже под воздействием <strong>солнечного ультрафиолетового излучения спектра B</strong> (УФ-B)</p>
+					</div>
+				</div>
+				<div class="sources__item source">
+					<div class="source__img">
+						<img width="120" height="120" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20120'%3E%3C/svg%3E" alt data-lazy-src="assets/source-2.svg">
+					</div>
+					<div class="source__info">
+						<p class="source__name">Пища</p>
+						<p class="source__descr">Витамин D содержится в таких продуктах, как <strong>жирная рыба, яичный желток, молоко и грибы</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="video container">
+		<div class="container__content">
+			<div class="video__player">
+				<video id="d3-promo-player" class="video-js vjs-default-skin" controls preload="none" width="auto" height="auto" poster="assets/d3-promo.jpg">
+					<source src="assets/d3-promo.webm" type="video/webm"/>
+					<source src="assets/d3-promo.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+	</div>
+	
+	<div class="questblock container">
+		<div class="questblock__content container__content">
+			<div class="container__row">
+				<div class="questblock__q container__col container__col_6">
+					<div class="questq">
+						<img width="170" height="90" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20170%2090'%3E%3C/svg%3E" alt data-lazy-src="assets/home-bigicon-1.svg">
+						<p>Может ли воздействие <span>солнечного света</span> покрыть всю потребность в необходимом нам витамине D?</p>
+					</div>
+				</div>
+					
+				<div class="questblock__a container__col container__col_6">
+					<div class="questa">
+						<img class="questa__icon" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-icon5.png">
+						<div class="questa__name">
+							<img width="24" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2050'%3E%3C/svg%3E" alt data-lazy-src="assets/msg-l-or.svg">
+							<p>Солнце не всегда может дать нам все необходимое количество витамина D</p>
+						</div>
+						<p class="questa__txt">Для этого угол падения его лучей должен быть оптимальным. Так, летом в полдень угол падения солнечных лучей является оптимальным для выработки витамина D в коже</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="bannerline bannerline_pads bannerline_sm container">
+		<p class="bannerline__content container__content">Кроме угла падения солнечных лучей, на способность нашего организма вырабатывать витамин D влияет и множество других факторов:</p>
+	</div>
+	
+	<div class="factarea">
+		<div class="container">
+			<div class="factarea__content container__content">
+				<div class="factarea__items">
+					<div class="factarea__factitem factitem factitem_lg">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-fact1.png">
+						<p class="factitem__name">Место проживания и время года</p>
+						<p class="factitem__descr">Чем дальше мы живем от экватора, тем меньше витамина D вырабатывается в коже во время пребывания на улице зимой. Фактически, у людей, которые живут далеко к северу или югу от экватора, витамин D может не вырабатываться в коже вплоть до шести месяцев в году</p>
+					</div>
+					<div class="factarea__factitem factitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-fact2.png">
+						<p class="factitem__name">Частота и продолжительность пребывания на солнце</p>
+					</div>
+					<div class="factarea__factitem factitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-fact3.png">
+						<p class="factitem__name">Цвет кожи</p>
+						<p class="factitem__descr">Чем меньше пигментация кожи, тем выше способность синтезировать витамин D на солнце — темная кожа действует как естественная защита от солнца</p>
+					</div>
+					<div class="factarea__factitem factitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-fact4.png">
+						<p class="factitem__name">Возраст</p>
+						<p class="factitem__descr">Когда мы становимся старше, способность кожи вырабатывать витамин D под воздействием солнечного света слабеет</p>
+					</div>
+					<div class="factarea__factitem factitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-fact5.png">
+						<p class="factitem__name">Масса тела</p>
+						<p class="factitem__descr">Избыточная масса тела может влиять на уровень витамина D</p>
+					</div>
+					<div class="factarea__factitem factitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-fact6.png">
+						<p class="factitem__name">Нарушение всасывания</p>
+						<p class="factitem__descr">Состояние, в котором снижается способность усваивать витамин D в кишечнике</p>
+					</div>
+					<div class="factarea__factitem factitem">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-fact7.png">
+						<p class="factitem__name">Применение солнцезащитных средств или увлажняющего крема с&nbsp;SPF</p>
+					</div>
+					<div class="factarea__factitem factitem factitem_lg">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-fact8.png">
+						<p class="factitem__name">Определенные лекарственные средства</p>
+						<p class="factitem__descr">Применение определенных лекарственных средств, влияющих на метаболизм витамина D, таких как глюкокортикостероиды, антациды или противосудорожные препараты</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="warning container">
+		<div class="warning__content container__content">
+			<p class="warning__title">Важно знать!</p>
+			<p class="warning__txt">Если вы проводите большую часть дня в помещении — например, много работаете, не выходя на улицу, — то, возможно, <span>вы получаете недостаточно солнечного света</span>, и его не хватает для выработки необходимого количества витамина D <span>независимо от времени года</span></p>
+		</div>
+	</div>
+	
+	<div class="questblock container">
+		<div class="questblock__content container__content">
+			<div class="container__row">
+				<div class="questblock__q container__col container__col_6">
+					<div class="questq">
+						<img width="170" height="90" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20170%2090'%3E%3C/svg%3E" alt data-lazy-src="assets/home-bigicon-2.svg">
+						<p>Можем ли мы получить весь необходимый витамин D <span>из еды?</span></p>
+					</div>
+				</div>
+					
+				<div class="questblock__a container__col container__col_6">
+					<div class="questa">
+						<img class="questa__icon" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/home-icon6.png">
+						<div class="questa__name">
+							<img width="24" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2050'%3E%3C/svg%3E" alt data-lazy-src="assets/msg-l-or.svg">
+							<p>Обеспечить достаточное потребление витамина D с едой практически невозможно</p>
+						</div>
+						<p class="questa__txt">Поступление витамина D с пищей играет второстепенную роль, поскольку он содержится только в определенных продуктах и только в небольшом количестве</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="bannerline bannerline_pads bannerline_sm container">
+		<p class="bannerline__content container__content">Например, чтобы получить 800 МЕ витамина D в сутки, нам необходимо съесть за день:</p>
+	</div>
+	
+	<div class="products container">
+		<div class="products__content container__content">
+			<div class="products__proditems">
+				<div class="products__proditem product">
+					<div class="product__info">
+						<p class="product__name">1 килограмм грибов</p>
+					</div>
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/products-shrooms.png">
+				</div>
+				<div class="products__proditem product">
+					<div class="product__info">
+						<p class="product__name">12 яиц</p>
+					</div>
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/products-eggs.png">
+				</div>
+				<div class="products__proditem product">
+					<div class="product__info">
+						<p class="product__name">7 пачек сливочного масла</p>
+						<p class="product__descr">(по 250г каждая)</p>
+					</div>
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/products-butter.png">
+				</div>
+				<div class="products__proditem product">
+					<div class="product__info">
+						<p class="product__name">0,5 килограмма тунца</p>
+					</div>
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/products-tuna.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="warning container">
+		<div class="warning__content container__content">
+			<p class="warning__title">Важно знать!</p>
+			<p class="warning__txt"><span>Веганы и вегетарианцы</span> более подвержены риску недостаточного потребления витамина D, поскольку витамин D содержится в значимом объеме лишь <span>в небольшом количестве видов растительной пищи</span></p>
+		</div>
+	</div>
+	
+	<div class="todo container">
+		<div class="todo__content container__content">
+			<div class="todo__sidecard sidecard">
+				<p class="sidecard__txt">Что можно сделать, чтобы <span>обеспечить себя достаточным количеством витамина D</span>, при условии, что мы не в состоянии получить его в полной мере в результате воздействия солнечного света и из пищи?</p>
+			</div>
+			
+			<div class="container__row">
+				<div class="todo__infocol container__col container__col_6">
+					<div class="todo__card todocard">
+						<div class="todocard__name">
+							<img width="24" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2050'%3E%3C/svg%3E" alt data-lazy-src="assets/msg-r-or.svg">
+							<p>Поскольку суточная потребность в витамине D обычно не покрывается за счет пребывания на солнце и диеты, <strong>у значительной части населения уровень витамина D недостаточный</strong></p>
+						</div>
+						<p class="todocard__txt"><span>Д<sub>3</sub>-Гамма<sup>®</sup></span> обеспечит вас необходимым круглый год витамином D</p>
+					</div>
+				</div>
+					
+				<div class="todo__imgcol container__col container__col_6">
+					<img class="todo__img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/pack.png">
+
+					<!--<div class="todo__txt">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="https://d3gamma.com.by/wp-content/webpc-passthru.php?src=https://d3gamma.com.by/wp-content/themes/factory16/img/todo.png&nocache=1"><noscript><img src="https://d3gamma.com.by/wp-content/webpc-passthru.php?src=https://d3gamma.com.by/wp-content/themes/factory16/img/todo.png&nocache=1" alt></noscript>
+						<p>Если вы обеспокоены возможным риском нехватки витамина D, обратитесь <strong>к врачу или фармацевту.</strong></p>
+						<p>Кроме того, фармацевт сможет дать вам совет, если вы просто хотите убедиться, что получаете <strong>достаточное количество витамина D для поддержания крепкого здоровья.</strong></p>
+					</div>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="bannerline bannerline_lg container">
+		<p class="bannerline__content container__content indexes-lg"><span>Д<sub>3</sub>-Гамма<sup>®</sup></span>— солнце круглый год</p>
+	</div>
+</main>		<footer class="footer container">
+			<div class="footer__content container__content">
+				<div class="footer__top">
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt data-lazy-src="assets/arr-top.png">
+					<p>К началу сайта</p>
+				</div>
+				
+				<div class="container__row">
+					<div class="container__col container__col_6">
+						<div class="footer__info">
+							<p>Представительство коммандитного товарищества «Wörwag Pharma GmbH & Co» (ФРГ) в Республике Беларусь</p>
+							<p>220004 г.Минск, ул.Раковская 12, офис 201
+								<br/>Тел./факс <a href="tel:+375172035942">+375 17 203-59-42</a>
+							</p>
+							<p><strong>e-mail: <a href="mailto:info@woerwagpharma.by">info@woerwagpharma.by</a>
+								<br/><a href="https://www.woerwagpharma.by/ru/produkty/produkt/d3-gamma" target="_blank">www.woerwagpharma.by</a></strong>
+							</p>
+						</div>	
+					</div>
+					
+					<div class="container__col container__col_6">
+						<div class="footer__message">
+							<p>Если вам стало известно о побочном действии при использовании биологически активной добавки Д<sub>3</sub>-Гамма<sup>®</sup>, пожалуйста, сообщите нам эту информацию по электронной почте <a href="mailto:info@woerwagpharma.by"><strong>info@woerwagpharma.by</strong></a></p>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+					<a id="scroll-to-top" href="#" title="Scroll to Top">Top</a>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='scripts/script.min.js' id='jquery-smooth-scroll-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/d3gamma.com.by","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://d3gamma.com.by/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>	</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1676998850 -->
